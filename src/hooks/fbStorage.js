@@ -26,7 +26,7 @@ function useFbStorage() {
     await updateFirebaseItem(changes, checked.id);
     const newItems = items.map((item) => {
       if (item.id === checked.id) {
-        item.done = changes;
+        item = { ...item, changes}
       }
       return item;
     })
